@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // GitHub Pages deployment configuration
-  base: process.env.NODE_ENV === 'production' ? '/bright-resume-bot/' : '/',
+  base: mode === 'production' ? '/bright-resume-bot/' : '/',
   server: {
     host: "::",
     port: 8080,
