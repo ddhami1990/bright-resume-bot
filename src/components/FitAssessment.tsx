@@ -2,29 +2,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Loader2 } from "lucide-react";
+import { useFitAnalysis } from "@/hooks/use-fit-analysis";
+import FitAnalysisResults from "@/components/FitAnalysisResults";
 
 const FitAssessment = () => {
-  const [jobDescription, setJobDescription] = useState(
-    `Lead SDET — Series B Fintech
-
-We're looking for someone with deep test automation experience, AI/ML testing knowledge, and the ability to lead cross-functional QA initiatives. You'll own our quality strategy and mentor a growing team...`
-  );
-  
-  const [activeExample, setActiveExample] = useState<"strong" | "weak">("strong");
-
-  const strongFitExample = `Lead SDET — Series B Fintech
-
-We're looking for someone with deep test automation experience, AI/ML testing knowledge, and the ability to lead cross-functional QA initiatives. You'll own our quality strategy and mentor a growing team...`;
-
-  const weakFitExample = `Mobile Test Lead — Consumer App
-
-We're building a social app for Gen Z. Looking for someone with deep mobile testing experience (iOS/Android native), performance testing at million-user scale, and consumer product QA intuition...`;
-
-  const handleExampleClick = (type: "strong" | "weak") => {
-    setActiveExample(type);
-    setJobDescription(type === "strong" ? strongFitExample : weakFitExample);
-  };
+  const [jobDescription, setJobDescription] = useState("");
+  const { isLoading, analysis, error, analyzeFit, clearAnalysis } = useFitAnalysis();
 
   return (
     <section id="fit-check" className="py-24 px-6">
@@ -51,25 +35,6 @@ We're building a social app for Gen Z. Looking for someone with deep mobile test
           transition={{ duration: 0.5, delay: 0.1 }}
           className="space-y-6"
         >
-          {/* Example Toggles */}
-          <div className="flex gap-3 justify-center">
-            <Button
-              variant={activeExample === "strong" ? "default" : "outline"}
-              size="sm"
-              onClick={() => handleExampleClick("strong")}
-              className={activeExample === "strong" ? "bg-primary text-primary-foreground" : ""}
-            >
-              Strong Fit Example
-            </Button>
-            <Button
-              variant={activeExample === "weak" ? "default" : "outline"}
-              size="sm"
-              onClick={() => handleExampleClick("weak")}
-              className={activeExample === "weak" ? "bg-primary text-primary-foreground" : ""}
-            >
-              Weak Fit Example
-            </Button>
-          </div>
 
           {/* Text Area */}
           <div className="space-y-2">
@@ -85,19 +50,49 @@ We're building a social app for Gen Z. Looking for someone with deep mobile test
           </div>
 
           {/* Analyze Button */}
-          <Button 
+          <Button
             id="ask-ai"
-            size="lg" 
+            size="lg"
             className="w-full gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+            onClick={() => analyzeFit(jobDescription)}
+            disabled={isLoading}
           >
-            <Sparkles className="w-5 h-5" />
-            Analyze Fit
+            {isLoading ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                Analyzing Fit...
+              </>
+            ) : (
+              <>
+                <Sparkles className="w-5 h-5" />
+                Analyze Fit
+              </>
+            )}
           </Button>
 
           {/* Tagline */}
           <p className="text-center text-sm text-muted-foreground italic">
             This signals something completely different than "please consider my resume."
           </p>
+
+          {/* Error Message */}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center text-red-400 text-sm bg-red-400/10 border border-red-400/20 rounded-lg p-3"
+            >
+              {error}
+            </motion.div>
+          )}
+
+          {/* Analysis Results */}
+          {analysis && (
+            <FitAnalysisResults
+              analysis={analysis}
+              onClear={clearAnalysis}
+            />
+          )}
         </motion.div>
       </div>
     </section>
