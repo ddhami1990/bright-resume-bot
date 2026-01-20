@@ -62,3 +62,46 @@ gh-pages -d dist
 
 **Issue**: "Page not found" after deployment
 **Fix**: Wait 5-10 minutes, then check the Actions logs for the exact deployment URL
+
+## Lovable Deployment Troubleshooting
+
+### Common Lovable Build Errors:
+
+1. **`lovable-tagger` plugin error:**
+   - ✅ **Fixed**: Removed `lovable-tagger` plugin from `vite.config.ts`
+   - ✅ **Fixed**: Removed dependency from `package.json`
+
+2. **Build timeout or failure:**
+   - Reduce bundle size by checking for large unused dependencies
+   - Ensure all imports are resolvable
+   - Check for Node.js specific code that won't work in browser
+
+3. **Environment compatibility:**
+   - Some packages might not work in Lovable's sandbox environment
+   - Check Lovable documentation for supported packages
+   - Avoid server-side rendering or Node.js APIs
+
+### Lovable-Specific Fixes:
+
+- ✅ **Base path**: Set to `'/'` for all deployments
+- ✅ **Clean config**: Removed custom plugins that might conflict
+- ✅ **Test locally**: `npm run build && npm run preview`
+
+### If Lovable Still Fails:
+
+Try these alternatives:
+- **Netlify**: Drag & drop the `dist` folder
+- **Vercel**: Connect GitHub repo directly
+- **GitHub Pages**: Use the workflow already configured
+
+### Testing Your Build:
+
+```bash
+# Build locally
+npm run build
+
+# Test the build
+npm run preview
+
+# Should work at http://localhost:4173
+```
