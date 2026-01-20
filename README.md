@@ -62,6 +62,35 @@ This project is built with:
 
 ## How can I deploy this project?
 
+### Option 1: GitHub Pages (Recommended)
+
+This project is configured for automatic deployment to GitHub Pages. Follow these steps:
+
+1. **Push your code to GitHub** (make sure your repository name is `bright-resume-bot`)
+
+2. **Enable GitHub Pages:**
+   - Go to your repository settings
+   - Scroll down to "Pages" section
+   - Under "Source", select "GitHub Actions"
+
+3. **Automatic Deployment:**
+   - The deployment will happen automatically when you push to the `main` branch
+   - Your site will be available at: `https://[your-username].github.io/bright-resume-bot`
+
+4. **Manual Deployment (if needed):**
+   ```sh
+   # Install dependencies
+   npm install
+
+   # Build for production
+   npm run build
+
+   # Deploy to gh-pages branch
+   npx gh-pages -d dist
+   ```
+
+### Option 2: Lovable Platform
+
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
