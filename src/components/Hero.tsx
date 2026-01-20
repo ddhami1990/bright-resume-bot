@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { MessageSquare, ChevronDown } from "lucide-react";
+import { MessageSquare, ChevronDown, Mail, Phone, Linkedin, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 const Hero = () => {
-  const companies = ["Stripe", "Datadog", "Series B → IPO"];
+  const companies = ["Cornerstone on Demand", "Varian Medical", "JLT", "Infogain"];
   
   return (
     <section className="min-h-screen flex flex-col justify-center px-6 pt-20">
@@ -18,24 +18,44 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary mb-8">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
             <span className="text-sm text-muted-foreground">
-              Open to Staff+ roles at Series B-D companies
+              Open to Lead SDET & QA Architect roles
             </span>
           </div>
 
           {/* Name */}
           <h1 className="font-serif text-6xl md:text-8xl font-medium tracking-tight mb-4">
-            Marcus Chen
+            Deepak Dhami
           </h1>
 
           {/* Title */}
           <h2 className="font-serif text-2xl md:text-4xl text-primary italic mb-4">
-            Staff Engineer
+            Lead Software Development Engineer In Test
           </h2>
 
           {/* Tagline */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-            Platform infrastructure, developer tools, and technical strategy
+          <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-xl">
+            AI-driven testing, automation frameworks, and CI/CD pipelines
           </p>
+
+          {/* Contact Info */}
+          <div className="flex flex-wrap items-center gap-4 mb-8 text-sm text-muted-foreground">
+            <span className="flex items-center gap-2">
+              <MapPin className="w-4 h-4" />
+              India
+            </span>
+            <span className="flex items-center gap-2">
+              <Phone className="w-4 h-4" />
+              7738000242
+            </span>
+            <a href="mailto:ddhami1990@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Mail className="w-4 h-4" />
+              ddhami1990@gmail.com
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Linkedin className="w-4 h-4" />
+              LinkedIn
+            </a>
+          </div>
 
           {/* Company Tags */}
           <div className="flex flex-wrap gap-3 mb-10">

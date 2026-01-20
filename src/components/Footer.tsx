@@ -10,9 +10,9 @@ const Footer = () => {
       className="py-12 px-6 border-t border-border"
     >
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <span className="font-serif text-xl font-semibold">MC</span>
+        <span className="font-serif text-xl font-semibold">DD</span>
         <p className="text-sm text-muted-foreground">
-          Built with intention. Ask me anything.
+          12+ years of quality engineering. Ask me anything.
         </p>
         <div className="flex items-center gap-6">
           <a 
@@ -24,15 +24,7 @@ const Footer = () => {
             LinkedIn
           </a>
           <a 
-            href="https://github.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            GitHub
-          </a>
-          <a 
-            href="mailto:marcus@example.com"
+            href="mailto:ddhami1990@gmail.com"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             Email
