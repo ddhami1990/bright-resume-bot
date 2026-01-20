@@ -6,20 +6,20 @@ import { Sparkles } from "lucide-react";
 
 const FitAssessment = () => {
   const [jobDescription, setJobDescription] = useState(
-    `Senior Platform Engineer — Series B Fintech
+    `Lead SDET — Series B Fintech
 
-We're looking for someone with deep API design experience, comfort with ambiguity, and the ability to lead cross-functional initiatives. You'll own our integration platform serving hundreds of partners...`
+We're looking for someone with deep test automation experience, AI/ML testing knowledge, and the ability to lead cross-functional QA initiatives. You'll own our quality strategy and mentor a growing team...`
   );
   
   const [activeExample, setActiveExample] = useState<"strong" | "weak">("strong");
 
-  const strongFitExample = `Senior Platform Engineer — Series B Fintech
+  const strongFitExample = `Lead SDET — Series B Fintech
 
-We're looking for someone with deep API design experience, comfort with ambiguity, and the ability to lead cross-functional initiatives. You'll own our integration platform serving hundreds of partners...`;
+We're looking for someone with deep test automation experience, AI/ML testing knowledge, and the ability to lead cross-functional QA initiatives. You'll own our quality strategy and mentor a growing team...`;
 
-  const weakFitExample = `Head of Consumer Mobile — Series A Consumer App
+  const weakFitExample = `Mobile Test Lead — Consumer App
 
-We're building a social app for Gen Z. Looking for someone with deep mobile development experience (iOS/Android), growth experimentation background, and consumer product intuition...`;
+We're building a social app for Gen Z. Looking for someone with deep mobile testing experience (iOS/Android native), performance testing at million-user scale, and consumer product QA intuition...`;
 
   const handleExampleClick = (type: "strong" | "weak") => {
     setActiveExample(type);
