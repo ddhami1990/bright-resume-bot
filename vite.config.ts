@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // GitHub Pages deployment configuration
-  base: mode === 'production' ? '/bright-resume-bot/' : '/',
+  // Universal deployment configuration
+  base: '/',
   server: {
     host: "::",
     port: 8080,
@@ -23,5 +23,11 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    sourcemap: false, // Reduce bundle size
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
 }));
