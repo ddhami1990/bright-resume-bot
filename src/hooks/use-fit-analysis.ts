@@ -16,7 +16,7 @@ interface FitAnalysis {
 
 const mockBackgroundData = `
 EXPERIENCE:
-- 12+ years in SDET/QA Engineering leadership roles
+- 13+ years in SDET/QA Engineering leadership roles
 - Led QA teams at multiple tech companies (Series A-C stage)
 - Built automated testing frameworks from scratch using Selenium, Cypress, Playwright
 - Implemented CI/CD pipelines with comprehensive test automation
@@ -218,7 +218,7 @@ const analyzeJobFit = async (jobDescription: string): Promise<FitAnalysis> => {
       }
     ];
     gaps = identifyGaps(jd);
-    recommendation = `This is an excellent match for your background. Your 12+ years of experience leading QA teams in similar-stage companies, combined with your comprehensive testing expertise across automation, AI/ML, security, and performance testing, makes you a strong candidate for this role.${gaps.length > 0 ? ' Consider addressing any identified gaps through targeted learning or highlighting transferable skills.' : ''}`;
+    recommendation = `This is an excellent match for your background. Your 13+ years of experience leading QA teams in similar-stage companies, combined with your comprehensive testing expertise across automation, AI/ML, security, and performance testing, makes you a strong candidate for this role.${gaps.length > 0 ? ' Consider addressing any identified gaps through targeted learning or highlighting transferable skills.' : ''}`;
   } else if (isMobileFocused && hasPerformanceScale) {
     // Weak fit for mobile consumer app
     status = "Weak Fit";

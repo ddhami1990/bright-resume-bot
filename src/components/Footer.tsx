@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <span className="font-serif text-xl font-semibold">DD</span>
         <p className="text-sm text-muted-foreground">
-          12+ years of quality engineering. Ask me anything.
+          13+ years of quality engineering. Ask me anything.
         </p>
         <div className="flex items-center gap-6">
           <a 

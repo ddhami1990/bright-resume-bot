@@ -22,7 +22,7 @@ const experiences: ExperienceItem[] = [
     bullets: [
       "Pioneered AI-driven regression analysis within software test automation, pinpointing defects with 95% accuracy and slashing testing cycle duration by 40%",
       "Created and maintained detailed documentation for AI testing procedures, ensuring repeatable and effective test strategies",
-      "Proficient in debugging and fixing script failures for API and Selenium testing in JAVA",
+      "Proficient in debugging and fixing script failures for API and Selenium testing in JAVA and C#",
       "Provided mentorship and technical guidance to junior QA engineers",
       "Integrated automated tests into CI/CD pipelines using Azure DevOps and TeamCity",
       "Non-functional testing (Performance, Security, Accessibility)",
@@ -39,7 +39,7 @@ const experiences: ExperienceItem[] = [
     role: "Senior Test Analyst",
     period: "12/2017 – 03/2021",
     bullets: [
-      "Built and maintained Selenium-based automation frameworks in JAVA",
+      "Built and maintained Selenium-based automation frameworks in JAVA and C#",
       "Implemented JUnit and TestNG for structured test execution",
       "Performed API testing using Postman and RESTAssured, ensuring system integrity",
       "Validated application security by leveraging OWASP ZAP, identifying and resolving five critical vulnerabilities including cross-site scripting flaws",
@@ -52,7 +52,7 @@ const experiences: ExperienceItem[] = [
     period: "12/2014 – 12/2017",
     bullets: [
       "Effectively communicated test status to clients, project teams, sponsors, and steering committees",
-      "Developed a Selenium framework using JAVA as the programming language",
+      "Developed a Selenium framework using C# as the programming language",
       "Created comprehensive Test Case Matrices for all test cases being executed",
       "Implemented Automation Testing in a Continuous Integration environment using Build Definitions in TFS",
       "Achieved 98% test coverage for new release features",
@@ -157,7 +157,7 @@ const Experience = () => {
         >
           <h2 className="font-serif text-4xl md:text-5xl font-medium mb-4">Experience</h2>
           <p className="text-muted-foreground max-w-xl">
-            12+ years of quality engineering excellence. Each role includes AI context—the real story behind the metrics.
+            13+ years of quality engineering excellence. Each role includes AI context—the real story behind the metrics.
           </p>
         </motion.div>
         
