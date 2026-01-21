@@ -2,17 +2,21 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Loader2 } from "lucide-react";
+import { Sparkles, Loader2, MessageSquare } from "lucide-react";
 import { useFitAnalysis } from "@/hooks/use-fit-analysis";
 import FitAnalysisResults from "@/components/FitAnalysisResults";
+import AIModal from "@/components/AIModal";
 
 const FitAssessment = () => {
   const [jobDescription, setJobDescription] = useState("");
+  const [aiModalOpen, setAiModalOpen] = useState(false);
   const { isLoading, analysis, error, analyzeFit, clearAnalysis } = useFitAnalysis();
 
   return (
-    <section id="fit-check" className="py-24 px-6">
-      <div className="max-w-3xl mx-auto">
+    <>
+      <AIModal open={aiModalOpen} onOpenChange={setAiModalOpen} />
+      <section id="fit-check" className="py-24 px-6">
+        <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,6 +74,17 @@ const FitAssessment = () => {
             )}
           </Button>
 
+          {/* Ask AI Button */}
+          <Button
+            variant="outline"
+            size="lg"
+            className="w-full gap-2 border-primary/30 hover:bg-primary/10"
+            onClick={() => setAiModalOpen(true)}
+          >
+            <MessageSquare className="w-5 h-5" />
+            Ask AI About Deepak
+          </Button>
+
           {/* Tagline */}
           <p className="text-center text-sm text-muted-foreground italic">
             This signals something completely different than "please consider my resume."
@@ -96,6 +111,7 @@ const FitAssessment = () => {
         </motion.div>
       </div>
     </section>
+    </>
   );
 };
 
